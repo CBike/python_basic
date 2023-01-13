@@ -11,6 +11,18 @@
 [] 50 번째 손님 (소요시간 : 50분)
 
 """
+from random import *
 
-mathing = ''
-print(f"[{mathing}] {i}번째 손님 (소요시간: {}분)")
+user = 0
+mathing = [randrange(1, 51) for i in range(1, 51)]
+print(mathing)
+
+for n, i in enumerate(mathing):
+    if 5 <= i <= 15:
+        print(f"[O] {n}번째 손님 (소요시간: {i}분)")
+        user += 1
+    else:
+        print(f"[]{n}번째 손님 (소여시간: {i}분")
+
+
+print(f"총 탑승 승객 {user} 명")
