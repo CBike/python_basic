@@ -19,10 +19,10 @@ print(mathing)
 
 for n, i in enumerate(mathing):
     if 5 <= i <= 15:
-        print(f"[O] {n}번째 손님 (소요시간: {i}분)")
+        print(f"[O]{n}번째 손님 (소요시간: {i}분)")
         user += 1
     else:
-        print(f"[]{n}번째 손님 (소여시간: {i}분")
+        print(f"[ ]{n}번째 손님 (소요시간: {i}분)")
 
 
 print(f"총 탑승 승객 {user} 명")
