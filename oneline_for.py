@@ -9,3 +9,6 @@ print(students)
 # students = [len(i) for i in students]
 students = [i.upper() for i in students]
 print(students)
+print(students)
+print(students)
+print(students)
