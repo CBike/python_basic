@@ -1,12 +1,16 @@
 class Unit:
-    def __init__(self, name, hp):
+    def __init__(self, name, hp, speed):
         self.name = name
         self.hp = hp
+        self.speed = speed
 
+    def move(self, location):
+        print(f"지상유닛 이동")
+        print(f"{self.name} : {location} 방향으로 이동 합니다 . 속도 : {self.speed}")
 
 class AttackUnit(Unit):
-    def __init__(self, name, hp, damage):
-        Unit.__init__(self, name, hp)
+    def __init__(self, name, hp, speed, damage):
+        Unit.__init__(self, name, hp, speed)
         self.damage = damage
 
     def attack(self, location):
@@ -19,12 +23,26 @@ class AttackUnit(Unit):
         if self.hp <= 0:
             print(f"{self.name}: 파괴 되었습니다.")
 
+class Flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+
+    def fly(self, name, location):
+        print(f"{name};{location}방향으로 날아갑니다.속도: {self.flying_speed}")
+
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit.__init__(self, name, 0 , hp, damage)
+        Flyable.__init__(self, flying_speed)
+
+    def move(self, location):
+        print("[공중 유닛 이동] ")
+        self.fly(self.name, location)
 
 
-marin1 = Unit("마린",40,5)
-marin2 = Unit("마린",40,5)
-marin3 = Unit("마린",40,5)
-tank = Unit("탱크",150,35)
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0)
 
-#상속
-
+        self.location = location
