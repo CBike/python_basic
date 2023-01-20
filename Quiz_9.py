@@ -25,7 +25,7 @@ while True:
     try:
         print(f"남은 치킨 : {chicken}")
         order = int(input("치킨 몇 마리 주문 하시겠습니까?"))
-        if order < 1 or type(order) == 'int':
+        if order < 1:
             raise ValueError
         if order > chicken:
             print("재료가 부족 합니다.")
