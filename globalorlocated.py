@@ -15,3 +15,4 @@ def check_porint_out_return():
 print("전체 총 : ",gun)
 checkpoint_retrun(gun,2)
 print("남은 총 : ",checkpoint_retrun(gun,2))
+print(check_porint_out_return())
