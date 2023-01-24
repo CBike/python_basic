@@ -22,7 +22,7 @@ def std_weight(height, gender):
     else:
         weight = float(height*height* 21)/10000
 
-    print(f"키 {height} {gender}의 표준 체중은 {round(weight,2)}입니다..........................")
+    print(f"키 {height} {gender}의 표준 체중은 {round(weight,2)}입니다.......")
 
 
 std_weight(181,"man")
